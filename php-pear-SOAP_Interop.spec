@@ -6,11 +6,12 @@
 Summary:	%{_pearname} - SOAP Interop Test Application
 Summary(pl):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
-Version:	0.7.2
+Version:	0.8
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	071bbf96a2eaaf175b9f7a4e7309de46
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -47,8 +48,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc %{_pearname}-%{version}/readme.txt
 %dir %{php_pear_dir}/%{_class}/%{_subclass}
-%dir %{php_pear_dir}/%{_class}/%{_subclass}/wsdl
-%dir %{php_pear_dir}/%{_class}/%{_subclass}/wsdl/imported
 %{php_pear_dir}/%{_class}/%{_subclass}/*
-%{php_pear_dir}/%{_class}/%{_subclass}/wsdl/*
-%{php_pear_dir}/%{_class}/%{_subclass}/wsdl/imported/*
