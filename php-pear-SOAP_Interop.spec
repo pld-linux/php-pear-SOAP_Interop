@@ -1,9 +1,10 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          SOAP
-%define         _subclass       Interop
+%define		_class		SOAP
+%define		_subclass	Interop
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
-Summary:	%{_pearname} - SOAP Interop Test Application
+
+Summary:	%{_pearname} - SOAP Interop test application
 Summary(pl):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
 Version:	0.8
