@@ -1,0 +1,312 @@
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/index.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/index.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/index.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/index.php	2004-12-05 12:57:14.205187416 +0100
+@@ -5,7 +5,7 @@
+ 	<title>PEAR SOAP Interop</title>
+ </head>
+ <?php
+-require_once 'registrationAndNotification.php';
++require_once 'SOAP/Interop/registrationAndNotification.php';
+ 
+ $tests = array('Round 2 Base',
+                 'Round 2 Group B', 
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client.php	2004-12-05 12:56:46.983325768 +0100
+@@ -21,14 +21,14 @@
+ require_once 'DB.php'; // PEAR/DB
+ require_once 'SOAP/Client.php';
+ 
+-require_once 'config.php';
+-require_once 'interop_test_functions.php';
+-require_once 'interop_test.php';
+-require_once 'params_Round2Base.php';
+-require_once 'params_Round2GroupB.php';
+-require_once 'params_Round2GroupC.php';
+-require_once 'params_Round3GroupD.php';
+-require_once 'registrationAndNotification.php';
++require_once 'SOAP/Interop/config.php';
++require_once 'SOAP/Interop/interop_test_functions.php';
++require_once 'SOAP/Interop/interop_test.php';
++require_once 'SOAP/Interop/params_Round2Base.php';
++require_once 'SOAP/Interop/params_Round2GroupB.php';
++require_once 'SOAP/Interop/params_Round2GroupC.php';
++require_once 'SOAP/Interop/params_Round3GroupD.php';
++require_once 'SOAP/Interop/registrationAndNotification.php';
+ 
+ error_reporting(E_ALL ^ E_NOTICE);
+ $INTEROP_LOCAL_SERVER = false;
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client_results.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client_results.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client_results.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client_results.php	2004-12-05 12:57:46.276311864 +0100
+@@ -21,7 +21,7 @@
+ //
+ // $Id$
+ //
+-require_once 'interop_client.php';
++require_once 'SOAP/Interop/interop_client.php';
+ ?>
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+ 
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client_run.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client_run.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_client_run.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_client_run.php	2004-12-05 12:51:16.520563744 +0100
+@@ -28,7 +28,7 @@
+ error_reporting(E_ALL);
+ 
+ require 'Console/Getopt.php';
+-require_once 'interop_client.php';
++require_once 'SOAP/Interop/interop_client.php';
+ 
+ #$SOAP_RAW_CONVERT = TRUE;
+ $INTEROP_LOCAL_SERVER = TRUE;// add local server to endpoints
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_Round2Base.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_Round2Base.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_Round2Base.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_Round2Base.php	2004-12-05 12:57:59.291333280 +0100
+@@ -19,7 +19,7 @@
+ //
+ // $Id$
+ //
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ function &generateFault($short, $long)
+ {
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_Round2GroupB.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_Round2GroupB.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_Round2GroupB.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/interop_Round2GroupB.php	2004-12-05 12:51:41.139821048 +0100
+@@ -19,7 +19,7 @@
+ //
+ // $Id$
+ //
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ class SOAP_Interop_GroupB {
+     var $__dispatch_map = array();
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2Base.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2Base.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2Base.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2Base.php	2004-12-05 12:55:43.523973056 +0100
+@@ -18,8 +18,8 @@
+ //
+ // $Id$
+ //
+-require_once 'params_values.php';
+-require_once 'interop_test.php';
++require_once 'SOAP/Interop/params_values.php';
++require_once 'SOAP/Interop/interop_test.php';
+ define('INTEROP_R2BASE','Round 2 Base');
+ //***********************************************************
+ // Base echoString
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupB.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupB.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupB.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupB.php	2004-12-05 12:53:07.420704360 +0100
+@@ -18,8 +18,8 @@
+ //
+ // $Id$
+ //
+-require_once 'params_values.php';
+-require_once 'interop_test.php';
++require_once 'SOAP/Interop/params_values.php';
++require_once 'SOAP/Interop/interop_test.php';
+ define('INTEROP_R2GROUPB','Round 2 Group B');
+ //***********************************************************
+ // GroupB echoStructAsSimpleTypes
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupC.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupC.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupC.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupC.php	2004-12-05 12:53:20.284748728 +0100
+@@ -18,8 +18,8 @@
+ //
+ // $Id$
+ //
+-require_once 'params_values.php';
+-require_once 'interop_test.php';
++require_once 'SOAP/Interop/params_values.php';
++require_once 'SOAP/Interop/interop_test.php';
+ define('INTEROP_R2GROUPC','Round 2 Group C');
+ //***********************************************************
+ // echoMeStringRequest php val tests
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round3GroupD.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round3GroupD.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round3GroupD.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round3GroupD.php	2004-12-05 12:49:50.058707944 +0100
+@@ -18,8 +18,8 @@
+ //
+ // $Id$
+ //
+-require_once 'params_values.php';
+-require_once 'interop_test.php';
++require_once 'SOAP/Interop/params_values.php';
++require_once 'SOAP/Interop/interop_test.php';
+ define('INTEROP_R3D_COMPOUND1','Round 3 Group D Compound 1');
+ define('INTEROP_R3D_COMPOUND2','Round 3 Group D Compound 2');
+ define('INTEROP_R3D_DOCLIT','Round 3 Group D DocLit');
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_values.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_values.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_values.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_values.php	2004-12-05 12:52:32.895952920 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Value.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ $soap_test_null = NULL;
+ 
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/registrationAndNotification.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/registrationAndNotification.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/registrationAndNotification.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/registrationAndNotification.php	2004-12-05 12:58:09.057848544 +0100
+@@ -1,7 +1,7 @@
+ <?php
+ require_once 'DB.php'; // PEAR/DB
+ require_once 'SOAP/Client.php';
+-require_once 'config.php';
++require_once 'SOAP/Interop/config.php';
+ 
+ class clientInfo {
+     var $name;
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2Base.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2Base.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2Base.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2Base.php	2004-12-05 12:50:59.804105032 +0100
+@@ -20,7 +20,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'interop_Round2Base.php';
++require_once 'SOAP/Interop/interop_Round2Base.php';
+ 
+ $base =& new SOAP_Interop_Base();
+ $server =& new SOAP_Server;
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2GroupB.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2GroupB.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2GroupB.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2GroupB.php	2004-12-05 12:54:26.841630544 +0100
+@@ -20,7 +20,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'interop_Round2GroupB.php';
++require_once 'SOAP/Interop/interop_Round2GroupB.php';
+ 
+ $groupb =& new SOAP_Interop_GroupB();
+ $server =& new SOAP_Server;
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2GroupC.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2GroupC.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round2GroupC.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round2GroupC.php	2004-12-05 12:55:11.403856056 +0100
+@@ -19,8 +19,8 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'interop_Round2Base.php';
+-require_once 'interop_Round2GroupC.php';
++require_once 'SOAP/Interop/interop_Round2Base.php';
++require_once 'SOAP/Interop/interop_Round2GroupC.php';
+ 
+ $groupc_headers =& new SOAP_Interop_GroupC_Headers();
+ $base =& new SOAP_Interop_Base();
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDCompound1.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDCompound1.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDCompound1.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDCompound1.php	2004-12-05 12:50:36.540641616 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDCompound2.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDCompound2.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDCompound2.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDCompound2.php	2004-12-05 12:50:44.158483528 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDDocLitParams.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDDocLitParams.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDDocLitParams.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDDocLitParams.php	2004-12-05 12:57:29.794817432 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDDocLit.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDDocLit.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDDocLit.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDDocLit.php	2004-12-05 12:50:13.993069368 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDEmptySA.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDEmptySA.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDEmptySA.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDEmptySA.php	2004-12-05 12:48:26.719377448 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'interop_Round3GroupD.php';
++require_once 'SOAP/Interop/interop_Round3GroupD.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport1.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport1.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport1.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport1.php	2004-12-05 12:53:45.187962864 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport2.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport2.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport2.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport2.php	2004-12-05 12:53:56.593229000 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport3.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport3.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDImport3.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDImport3.php	2004-12-05 12:54:05.066940800 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDRpcEnc.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDRpcEnc.php
+--- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDRpcEnc.php	2004-12-05 12:41:08.000000000 +0100
++++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/server_Round3GroupDRpcEnc.php	2004-12-05 12:54:49.206230608 +0100
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
