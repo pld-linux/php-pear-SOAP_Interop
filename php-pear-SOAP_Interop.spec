@@ -1,11 +1,10 @@
-# ToDo:
-# - pl summary/description
 %include	/usr/lib/rpm/macros.php
 %define         _class          SOAP
 %define         _subclass       Interop
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - SOAP Interop Test Application
+Summary(pl):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
 Version:	0.7.2
 Release:	1
@@ -23,6 +22,12 @@ Test harness for SOAP Builders tests. Supports Round 2 and Round 3
 tests.
 
 This class has in PEAR status: %{_status}.
+
+%description -l pl
+¦rodowisko testowe do testów SOAP Builders. Obs³uguje testy rundy 2 i
+3.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
