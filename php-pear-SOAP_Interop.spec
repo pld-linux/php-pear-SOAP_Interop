@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Test harness for SOAP Builders tests. Supports Round 2 and Round 3
 tests.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 ¦rodowisko testowe do testów SOAP Builders. Obs³uguje testy rundy 2 i
