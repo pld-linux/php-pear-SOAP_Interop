@@ -18,6 +18,7 @@ URL:		http://pear.php.net/package/SOAP_Interop/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
 Requires:	php-pear
+Requires:	php-pear-SOAP
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
