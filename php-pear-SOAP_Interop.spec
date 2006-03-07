@@ -15,6 +15,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	071bbf96a2eaaf175b9f7a4e7309de46
 Patch0:		%{name}-path_fix.patch
 URL:		http://pear.php.net/package/SOAP_Interop/
+BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
 Requires:	php-pear
