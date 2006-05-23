@@ -17,6 +17,7 @@ Patch0:		%{name}-path_fix.patch
 URL:		http://pear.php.net/package/SOAP_Interop/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
 Requires:	php-pear
 Requires:	php-pear-SOAP
