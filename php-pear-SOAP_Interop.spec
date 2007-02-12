@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - SOAP Interop test application
-Summary(pl):	%{_pearname} - testowa aplikacja SOAP Interop
+Summary(pl.UTF-8):   %{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
 Version:	0.8
 Release:	2.3
@@ -33,8 +33,8 @@ tests.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-¶rodowisko testowe do testÛw SOAP Builders. Obs≥uguje testy rundy 2 i
+%description -l pl.UTF-8
+≈örodowisko testowe do test√≥w SOAP Builders. Obs≈Çuguje testy rundy 2 i
 3.
 
 Ta klasa ma w PEAR status: %{_status}.
