@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - SOAP Interop test application
-Summary(pl.UTF-8):   %{_pearname} - testowa aplikacja SOAP Interop
+Summary(pl.UTF-8):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
 Version:	0.8
 Release:	2.3
