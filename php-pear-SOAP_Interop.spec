@@ -7,18 +7,18 @@
 Summary:	%{_pearname} - SOAP Interop test application
 Summary(pl.UTF-8):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
-Version:	0.8
-Release:	2.3
+Version:	0.8.2
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	071bbf96a2eaaf175b9f7a4e7309de46
+# Source0-md5:	7a54de48942d6a289b95ae5084aa8cff
 Patch0:		%{name}-path_fix.patch
 URL:		http://pear.php.net/package/SOAP_Interop/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
+#BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
 Requires:	php-pear
 Requires:	php-pear-SOAP
 BuildArch:	noarch
@@ -43,7 +43,7 @@ Ta klasa ma w PEAR status: %{_status}.
 %pear_package_setup
 
 # extract config.php.orig from tarball that setup cleaned. TODO. include as Source1.
-tar zxf %{SOURCE0} %{_pearname}-%{version}/config.php.orig
+tar zxf %{SOURCE0} %{_pearname}-%{version}/config.php.dist
 
 install -d docs/%{_pearname}
 mv ./%{php_pear_dir}/%{_class}/%{_subclass}/readme.txt docs/%{_pearname}
@@ -55,7 +55,7 @@ cd ./%{php_pear_dir}/%{_class}/%{_subclass}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
-install %{_pearname}-%{version}/config.php.orig $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/config.php
+install %{_pearname}-%{version}/config.php.dist $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/config.php
 
 %clean
 rm -rf $RPM_BUILD_ROOT

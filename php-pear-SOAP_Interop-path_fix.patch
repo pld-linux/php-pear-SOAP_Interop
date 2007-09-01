@@ -1,10 +1,10 @@
 diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/index.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/index.php
 --- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/index.php	2004-12-05 12:41:08.000000000 +0100
 +++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/index.php	2004-12-05 12:57:14.205187416 +0100
-@@ -5,7 +5,7 @@
- 	<title>PEAR SOAP Interop</title>
+@@ -6,7 +6,7 @@
  </head>
  <?php
+ require_once 'config.php';
 -require_once 'registrationAndNotification.php';
 +require_once 'SOAP/Interop/registrationAndNotification.php';
  
@@ -87,17 +87,17 @@ diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/interop_Round2GroupB.
 diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2Base.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2Base.php
 --- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2Base.php	2004-12-05 12:41:08.000000000 +0100
 +++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2Base.php	2004-12-05 12:55:43.523973056 +0100
-@@ -18,8 +18,8 @@
- //
+@@ -19,8 +19,8 @@
  // $Id$
  //
+ 
 -require_once 'params_values.php';
 -require_once 'interop_test.php';
 +require_once 'SOAP/Interop/params_values.php';
 +require_once 'SOAP/Interop/interop_test.php';
- define('INTEROP_R2BASE','Round 2 Base');
+ define('INTEROP_R2BASE', 'Round 2 Base');
+ 
  //***********************************************************
- // Base echoString
 diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupB.php php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupB.php
 --- php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/params_Round2GroupB.php	2004-12-05 12:41:08.000000000 +0100
 +++ php-pear-SOAP_Interop-0.8/SOAP_Interop-0.8/params_Round2GroupB.php	2004-12-05 12:53:07.420704360 +0100
