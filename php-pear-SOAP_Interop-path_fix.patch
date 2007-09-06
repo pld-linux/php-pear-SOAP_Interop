@@ -310,3 +310,36 @@ diff -burN php-pear-SOAP_Interop-0.8.orig/SOAP_Interop-0.8/server_Round3GroupDRp
  
  // http://www.whitemesa.com/r3/interop3.html
  // http://www.whitemesa.com/r3/plan.html
+--- a/b/index.php~	2007-09-06 22:33:02.000000000 +0000
++++ a/b/index.php	2007-09-06 22:51:12.000000000 +0000
+@@ -5,7 +5,7 @@
+ 	<title>PEAR SOAP Interop</title>
+ </head>
+ <?php
+-require_once 'config.php';
++require_once 'SOAP/Interop/config.php';
+ require_once 'SOAP/Interop/registrationAndNotification.php';
+ 
+ $tests = array('Round 2 Base',
+--- a/b/server_Round3GroupD.php~	2007-09-06 23:02:05.000000000 +0000
++++ a/b/server_Round3GroupD.php	2007-09-06 23:03:13.000000000 +0000
+@@ -19,7 +19,7 @@
+ // $Id$
+ //
+ require_once 'SOAP/Server.php';
+-require_once 'interop_Round3GroupD.php';
++require_once 'SOAP/Interop/interop_Round3GroupD.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
+--- a/b/interop_Round3GroupD.php~	2007-09-06 23:03:48.000000000 +0000
++++ a/b/interop_Round3GroupD.php	2007-09-06 23:04:47.000000000 +0000
+@@ -18,7 +18,7 @@
+ //
+ // $Id$
+ //
+-require_once 'params_classes.php';
++require_once 'SOAP/Interop/params_classes.php';
+ 
+ // http://www.whitemesa.com/r3/interop3.html
+ // http://www.whitemesa.com/r3/plan.html
