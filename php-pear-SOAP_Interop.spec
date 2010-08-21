@@ -3,22 +3,20 @@
 %define		_subclass	Interop
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
-
 Summary:	%{_pearname} - SOAP Interop test application
 Summary(pl.UTF-8):	%{_pearname} - testowa aplikacja SOAP Interop
 Name:		php-pear-%{_pearname}
 Version:	0.8.2
-Release:	3
+Release:	4
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	7a54de48942d6a289b95ae5084aa8cff
 Patch0:		%{name}-path_fix.patch
 URL:		http://pear.php.net/package/SOAP_Interop/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-#BuildRequires:	missing dep: pear(SOAP/Interop/interop_Round3GroupD.php)
 Requires:	php-pear
 Requires:	php-pear-SOAP
 BuildArch:	noarch
