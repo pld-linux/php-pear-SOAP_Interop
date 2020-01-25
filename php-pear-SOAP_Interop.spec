@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_class		SOAP
 %define		_subclass	Interop
 %define		_status		beta
