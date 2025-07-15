@@ -46,7 +46,7 @@ install -d docs/%{_pearname}
 mv ./%{php_pear_dir}/%{_class}/%{_subclass}/readme.txt docs/%{_pearname}
 
 cd ./%{php_pear_dir}/%{_class}/%{_subclass}
-%patch0 -p2
+%patch -P0 -p2
 
 %install
 rm -rf $RPM_BUILD_ROOT
